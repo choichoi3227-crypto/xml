@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+  <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
+  <b:include data='blog' name='all-head-content'/>
+  <script async='async' crossorigin='anonymous' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4926608698335521'></script>
+
+  <b:skin><![CDATA[
+/* ============ 기본 ============ */
+:root{
+  --ink:#222;
+  --muted:#6d6d6d;
+  --line:#dcdcd8;
+  --line-strong:#222;
+  --paper:#fff;
+  --band:#f4f2ed;
+  --accent:#c8321f;
+  --w:1080px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:15px/1.7 'Pretendard Variable',Pretendard,-apple-system,'Malgun Gothic',sans-serif;
+  word-break:keep-all;overflow-wrap:break-word;
+}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 16px}
+
+/* ============ 상단 안내줄 ============ */
+.topbar{background:var(--band);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:6px;padding-bottom:6px}
+
+/* ============ 헤더 ============ */
+.masthead .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:14px}
+.site-title{font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.site-title a:hover{text-decoration:none}
+.site-desc{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.search{display:flex;border:1px solid var(--line-strong)}
+.search input{border:0;padding:7px 10px;font:inherit;font-size:13px;width:170px;outline:0;background:#fff}
+.search button{border:0;border-left:1px solid var(--line-strong);background:var(--line-strong);color:#fff;font:inherit;font-size:13px;padding:0 12px;cursor:pointer}
+
+.gnb{border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line)}
+.gnb ul{display:flex;flex-wrap:wrap}
+.gnb a{display:block;padding:10px 14px 9px;font-size:14px;font-weight:600}
+.gnb a:hover{color:var(--accent);text-decoration:none}
+
+/* ============ 본문 레이아웃 ============ */
+.page{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:36px;padding-top:26px;padding-bottom:50px}
+.sidebar .widget{margin-bottom:28px}
+.sidebar h3,.sec-head{
+  margin:0 0 10px;padding-bottom:7px;border-bottom:2px solid var(--line-strong);
+  font-size:15px;font-weight:800;letter-spacing:-.01em;
+}
+
+/* ============ 글 목록 ============ */
+.list-head{margin:0 0 6px;padding-bottom:8px;border-bottom:2px solid var(--line-strong);font-size:18px;font-weight:800}
+.post-list li{border-bottom:1px solid var(--line)}
+.row{display:flex;gap:16px;padding:16px 0}
+.row .thumb{flex:0 0 132px;height:96px;background:var(--band);overflow:hidden}
+.row .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.row h2{margin:0 0 5px;font-size:17px;line-height:1.4;font-weight:700;letter-spacing:-.02em}
+.row h2 a:hover{color:var(--accent)}
+.row p{margin:0 0 6px;font-size:13.5px;color:#4a4a4a;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:12px;color:var(--muted)}
+.meta a{margin-left:6px}
+.meta a:before{content:'#'}
+
+.pager{display:flex;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;font-weight:600}
+.pager a:hover{color:var(--accent);text-decoration:none}
+
+/* ============ 단일 글 ============ */
+.post-title{margin:0 0 8px;font-size:27px;line-height:1.35;font-weight:800;letter-spacing:-.03em}
+.post .meta{padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.post-body{font-size:16px;line-height:1.85}
+.post-body h2{margin:34px 0 12px;padding-left:10px;border-left:4px solid var(--line-strong);font-size:21px;line-height:1.4;letter-spacing:-.02em}
+.post-body h3{margin:26px 0 8px;font-size:18px}
+.post-body p{margin:0 0 16px}
+.post-body a{color:#0b57b8;text-decoration:underline}
+.post-body blockquote{margin:20px 0;padding:4px 16px;border-left:3px solid var(--line);color:#555}
+.post-body table{width:100%;border-collapse:collapse;font-size:14px;margin:18px 0;display:block;overflow-x:auto}
+.post-body th,.post-body td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.post-body th{background:var(--band)}
+.post-body img{display:block;margin:16px auto}
+
+/* ============ 광고 슬롯 ============ */
+.ad-slot{margin:22px 0;text-align:center;min-height:0}
+.ad-slot:before{content:'광고';display:block;font-size:11px;color:#999;text-align:left;margin-bottom:3px}
+.ad-slot ins{display:block}
+
+/* ============ 쿠팡 인기상품 박스 ============ */
+.cp{margin:0 0 26px}
+.cp-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:7px;border-bottom:2px solid var(--line-strong)}
+.cp-h h2{margin:0;font-size:17px;font-weight:800;letter-spacing:-.02em}
+.cp-time{font-size:12px;color:var(--muted);white-space:nowrap}
+.cp-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.cp-tabs button{
+  border:0;background:none;font:inherit;font-size:13px;font-weight:600;color:var(--muted);
+  padding:9px 12px 8px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;
+}
+.cp-tabs button:hover{color:var(--ink)}
+.cp-tabs button.on{color:var(--accent);border-bottom-color:var(--accent)}
+.cp-list{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;min-height:120px}
+.cp-list li{border-bottom:1px solid var(--line)}
+.cp-item{display:flex;gap:12px;padding:12px 0;align-items:center}
+.cp-item:hover{text-decoration:none}
+.cp-item:hover .cp-name{text-decoration:underline}
+.cp-rank{flex:0 0 22px;font-size:20px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;color:#9a9a9a}
+.cp-list li:nth-child(-n+3) .cp-rank{color:var(--accent)}
+.cp-img{flex:0 0 72px;height:72px;background:var(--band);overflow:hidden}
+.cp-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cp-info{min-width:0;display:block}
+.cp-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;line-height:1.45;margin-bottom:3px}
+.cp-price{display:block;font-size:14px}
+.cp-price b{font-size:16px;font-weight:800;margin-right:1px}
+.cp-tag{display:inline-block;margin-left:6px;padding:0 4px;border:1px solid #2a6ec4;color:#2a6ec4;font-size:11px;line-height:16px;vertical-align:1px}
+.cp-disc{margin:10px 0 0;font-size:11.5px;color:var(--muted);line-height:1.5}
+.cp-msg{padding:28px 0;font-size:13px;color:var(--muted);grid-column:1/-1}
+
+.cp.compact .cp-list{grid-template-columns:1fr;min-height:0}
+.cp.compact .cp-img{flex-basis:56px;height:56px}
+.cp.compact .cp-h h2{font-size:15px}
+.cp.compact .cp-time{display:none}
+.cp.compact .cp-item{padding:9px 0}
+.cp.compact .cp-name{font-size:13px}
+.cp.compact .cp-price b{font-size:14px}
+.cp.inpost{margin-top:36px}
+
+/* ============ 사이드바 위젯 ============ */
+.sidebar .widget li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.sidebar .widget li a:hover{color:var(--accent)}
+.sidebar .count{color:var(--muted);font-size:12px;margin-left:4px}
+
+/* ============ 푸터 ============ */
+.footer{border-top:2px solid var(--line-strong);background:var(--band);font-size:12.5px;color:var(--muted)}
+.footer .wrap{padding-top:20px;padding-bottom:26px}
+.footer ul{display:flex;flex-wrap:wrap;gap:4px 16px;margin-bottom:10px}
+.footer ul a{color:var(--ink)}
+.footer p{margin:0 0 4px}
+
+/* ============ 모바일 ============ */
+@media (max-width:860px){
+  .page{grid-template-columns:1fr;gap:10px}
+  .cp-list{grid-template-columns:1fr}
+  .masthead .wrap{flex-direction:column;align-items:stretch}
+  .search input{flex:1;width:auto}
+}
+@media (max-width:520px){
+  .site-title{font-size:23px}
+  .row .thumb{flex-basis:96px;height:72px}
+  .row h2{font-size:15.5px}
+  .row p{display:none}
+  .post-title{font-size:22px}
+  .post-body{font-size:15.5px}
+  .gnb ul{flex-wrap:nowrap;overflow-x:auto}
+  .gnb a{white-space:nowrap}
+  .topbar .wrap span:last-child{display:none}
+}
+  ]]></b:skin>
+</head>
+
+<body>
+  <div class='topbar'>
+    <div class='wrap'>
+      <span id='today'></span>
+      <span>인기 상품 순위는 1시간 단위로 갱신됩니다</span>
+    </div>
+  </div>
+
+  <header class='masthead'>
+    <div class='wrap'>
+      <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Header1' locked='true' title='' type='Header' version='2' visible='true'>
+          <b:includable id='main' var='this'>
+            <div>
+              <div class='site-title'><a expr:href='data:blog.homepageUrl'><data:blog.title/></a></div>
+              <b:if cond='data:blog.metaDescription != &quot;&quot;'>
+                <p class='site-desc'><data:blog.metaDescription/></p>
+              </b:if>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+      <form class='search' expr:action='data:blog.searchUrl' method='get'>
+        <input name='q' placeholder='검색어 입력' type='search'/>
+        <button type='submit'>검색</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class='gnb'>
+    <div class='wrap'>
+      <b:section class='nav' id='nav' maxwidgets='1' showaddelement='yes'>
+        <b:widget id='LinkList1' locked='false' title='메뉴' type='LinkList' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='sorting'>NONE</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='this'>
+            <ul>
+              <b:loop values='data:links' var='link'>
+                <li><a expr:href='data:link.target'><data:link.name/></a></li>
+              </b:loop>
+            </ul>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </nav>
+
+  <div class='wrap'>
+    <b:if cond='data:view.isHomepage'>
+      <div style='padding-top:26px'>
+        <div class='cp' data-cp='' data-limit='10' data-tabs='1' data-title='실시간 인기 상품 랭킹'></div>
+      </div>
+    </b:if>
+  </div>
+
+  <div class='wrap page'>
+    <main>
+      <b:section class='main' id='main' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='블로그 게시물' type='Blog' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='commentLabel'>댓글</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+            <b:widget-setting name='showPostFooter'>false</b:widget-setting>
+          </b:widget-settings>
+
+          <b:includable id='main' var='this'>
+            <b:if cond='data:view.isSingleItem'>
+              <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/>
+              </b:loop>
+            <b:else/>
+              <b:if cond='data:view.isLabelSearch'>
+                <h1 class='list-head'>&#39;<data:blog.searchLabel/>&#39; 글 목록</h1>
+              <b:elseif cond='data:view.isSearch'/>
+                <h1 class='list-head'>&#39;<data:blog.searchQuery/>&#39; 검색 결과</h1>
+              <b:elseif cond='data:view.isArchive'/>
+                <h1 class='list-head'><data:blog.pageName/></h1>
+              <b:else/>
+                <h2 class='sec-head'>최근 글</h2>
+              </b:if>
+              <ul class='post-list'>
+                <b:loop values='data:posts' var='post'>
+                  <li><b:include data='post' name='postSummary'/></li>
+                </b:loop>
+              </ul>
+              <b:if cond='data:numPosts == 0'>
+                <p class='cp-msg'>표시할 글이 없습니다.</p>
+              </b:if>
+            </b:if>
+
+            <b:if cond='data:olderPageUrl or data:newerPageUrl'>
+              <nav class='pager'>
+                <span><b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>&#8592; 최신 글</a></b:if></span>
+                <span><b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>이전 글 &#8594;</a></b:if></span>
+              </nav>
+            </b:if>
+          </b:includable>
+
+          <b:includable id='postSummary' var='post'>
+            <article class='row'>
+              <b:if cond='data:post.featuredImage'>
+                <a class='thumb' expr:href='data:post.url'>
+                  <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 264, &quot;11:8&quot;)' loading='lazy'/>
+                </a>
+              </b:if>
+              <div>
+                <h2><a expr:href='data:post.url'><data:post.title/></a></h2>
+                <p><b:eval expr='snippet(data:post.body, {length: 120, links: false, linebreaks: false, ellipsis: true})'/></p>
+                <div class='meta'>
+                  <data:post.date/>
+                  <b:loop values='data:post.labels' var='label'>
+                    <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                  </b:loop>
+                </div>
+              </div>
+            </article>
+          </b:includable>
+
+          <b:includable id='post' var='post'>
+            <article class='post'>
+              <h1 class='post-title'><data:post.title/></h1>
+              <b:if cond='data:view.isPost'>
+                <div class='meta post-labels'>
+                  <data:post.date/>
+                  <b:loop values='data:post.labels' var='label'>
+                    <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                  </b:loop>
+                </div>
+                <div class='ad-slot' data-ad='top'></div>
+              </b:if>
+              <div class='post-body'><data:post.body/></div>
+              <b:if cond='data:view.isPost'>
+                <div class='ad-slot' data-ad='mid'></div>
+                <div class='cp inpost' data-cp='' data-auto='1' data-limit='6' data-title='함께 보면 좋은 인기 상품'></div>
+              </b:if>
+            </article>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </main>
+
+    <aside class='sidebar'>
+      <div class='cp compact' data-cp='' data-limit='5' data-title='지금 많이 팔리는 상품'></div>
+      <div class='ad-slot' data-ad='side'></div>
+      <b:section class='sidebar' id='sidebar' showaddelement='yes'>
+        <b:widget id='PopularPosts1' locked='false' title='많이 본 글' type='PopularPosts' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+            <b:widget-setting name='showThumbnails'>false</b:widget-setting>
+            <b:widget-setting name='showSnippets'>false</b:widget-setting>
+            <b:widget-setting name='timeRange'>MONTH</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='this'>
+            <div class='widget'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:posts' var='post'>
+                  <li><a expr:href='data:post.href'><data:post.title/></a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='Label1' locked='false' title='카테고리' type='Label' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='display'>LIST</b:widget-setting>
+            <b:widget-setting name='selectedLabelsList'/>
+            <b:widget-setting name='showType'>ALL</b:widget-setting>
+            <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='this'>
+            <div class='widget'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li>
+                    <a expr:href='data:label.url'><data:label.name/></a>
+                    <span class='count'><data:label.count/></span>
+                  </li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </aside>
+  </div>
+
+  <footer class='footer'>
+    <div class='wrap'>
+      <b:section class='footer' id='footer' maxwidgets='1' showaddelement='yes'>
+        <b:widget id='LinkList2' locked='false' title='푸터 링크' type='LinkList' version='2' visible='true'>
+          <b:includable id='main' var='this'>
+            <ul>
+              <b:loop values='data:links' var='link'>
+                <li><a expr:href='data:link.target'><data:link.name/></a></li>
+              </b:loop>
+            </ul>
+          </b:includable>
+        </b:widget>
+      </b:section>
+      <p>이 사이트의 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+      <p>&#169; <span id='year'></span> <data:blog.title/></p>
+    </div>
+  </footer>
+
+  <script>
+  //<![CDATA[
+  (function () {
+    /* ===== 설정: 여기만 수정하세요 ===== */
+    var CFG = {
+      api: 'https://coupang-best-proxy.여기에서브도메인.workers.dev', // Worker 주소 (끝에 / 없이)
+      ttl: 60 * 60 * 1000,        // 캐시 1시간
+      defaultCat: '1014',
+      adSlots: { top: '', mid: '', side: '' }, // 애드센스 광고 단위 ID(숫자). 비워 두면 해당 위치는 표시 안 함
+      adClient: 'ca-pub-4926608698335521',
+      cats: [
+        ['1016', '가전·디지털'], ['1014', '생활용품'], ['1012', '식품'], ['1010', '뷰티'],
+        ['1011', '출산·유아'], ['1017', '스포츠·레저'], ['1029', '반려동물'], ['1024', '건강식품']
+      ],
+      // 글 라벨에 이 단어가 들어 있으면 해당 카테고리 상품을 글 아래에 보여줌
+      labelMap: [
+        ['가전', '1016'], ['디지털', '1016'], ['노트북', '1016'], ['식품', '1012'], ['먹거리', '1012'],
+        ['뷰티', '1010'], ['화장품', '1010'], ['육아', '1011'], ['유아', '1011'], ['캠핑', '1017'],
+        ['운동', '1017'], ['러닝', '1017'], ['마라톤', '1017'], ['골프', '1017'], ['반려', '1029'],
+        ['건강', '1024'], ['영양제', '1024'], ['생활', '1014']
+      ]
+    };
+    var DISC = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.';
+
+    /* ===== 날짜/연도 ===== */
+    var now = new Date(), days = ['일', '월', '화', '수', '목', '금', '토'];
+    var t = document.getElementById('today');
+    if (t) t.textContent = now.getFullYear() + '.' + pad(now.getMonth() + 1) + '.' + pad(now.getDate()) + ' (' + days[now.getDay()] + ')';
+    var y = document.getElementById('year');
+    if (y) y.textContent = now.getFullYear();
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    /* ===== 저장소 ===== */
+    function rd(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
+    function wr(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+    var inflight = {};
+    function load(cat) {
+      var key = 'cpb:' + cat, c = rd(key);
+      if (c && c.t && Date.now() - c.t < CFG.ttl) return Promise.resolve(c);
+      if (inflight[cat]) return inflight[cat];
+      inflight[cat] = fetch(CFG.api + '/best?cat=' + cat + '&limit=20')
+        .then(function (r) { if (!r.ok) throw new Error('x'); return r.json(); })
+        .then(function (j) {
+          if (!j || !j.items) throw new Error('x');
+          wr(key, j);
+          return j;
+        })
+        .catch(function () { if (c) return c; throw new Error('x'); })
+        .then(function (v) { delete inflight[cat]; return v; }, function (e) { delete inflight[cat]; throw e; });
+      return inflight[cat];
+    }
+
+    /* ===== DOM 도우미 ===== */
+    function el(tag, cls, txt) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (txt != null) n.textContent = txt;
+      return n;
+    }
+
+    function renderItems(ol, data, limit) {
+      ol.innerHTML = '';
+      var items = (data.items || []).slice(0, limit);
+      if (!items.length) { ol.appendChild(el('li', 'cp-msg', '표시할 상품이 없습니다.')); return; }
+      items.forEach(function (p, i) {
+        var li = el('li'), a = el('a', 'cp-item');
+        a.href = p.url; a.target = '_blank'; a.rel = 'nofollow sponsored noopener';
+        a.appendChild(el('span', 'cp-rank', String(i + 1)));
+
+        var im = el('span', 'cp-img'), img = new Image();
+        img.src = p.image; img.alt = p.name; img.width = 72; img.height = 72; img.loading = 'lazy';
+        im.appendChild(img); a.appendChild(im);
+
+        var info = el('span', 'cp-info');
+        info.appendChild(el('span', 'cp-name', p.name));
+        var pr = el('span', 'cp-price'), b = el('b', null, Number(p.price).toLocaleString('ko-KR'));
+        pr.appendChild(b); pr.appendChild(document.createTextNode('원'));
+        if (p.rocket) pr.appendChild(el('span', 'cp-tag', '로켓배송'));
+        info.appendChild(pr);
+        a.appendChild(info);
+        li.appendChild(a); ol.appendChild(li);
+      });
+    }
+
+    function pickAutoCat() {
+      var tags = document.querySelectorAll('.post-labels a'), i, j, name;
+      for (i = 0; i < tags.length; i++) {
+        name = tags[i].textContent;
+        for (j = 0; j < CFG.labelMap.length; j++) {
+          if (name.indexOf(CFG.labelMap[j][0]) > -1) return CFG.labelMap[j][1];
+        }
+      }
+      return CFG.defaultCat;
+    }
+
+    function initBox(box) {
+      var limit = parseInt(box.getAttribute('data-limit'), 10) || 10;
+      var cat = box.getAttribute('data-auto') ? pickAutoCat() : CFG.defaultCat;
+      var withTabs = box.getAttribute('data-tabs');
+
+      var head = el('div', 'cp-h');
+      head.appendChild(el('h2', null, box.getAttribute('data-title') || '인기 상품'));
+      var time = el('span', 'cp-time', '');
+      head.appendChild(time);
+      box.appendChild(head);
+
+      var tabs;
+      if (withTabs) {
+        tabs = el('div', 'cp-tabs');
+        CFG.cats.forEach(function (c) {
+          var btn = el('button', c[0] === cat ? 'on' : '', c[1]);
+          btn.type = 'button';
+          btn.onclick = function () {
+            var all = tabs.children, k;
+            for (k = 0; k < all.length; k++) all[k].className = '';
+            btn.className = 'on';
+            show(c[0]);
+          };
+          tabs.appendChild(btn);
+        });
+        box.appendChild(tabs);
+      }
+
+      var ol = el('ol', 'cp-list');
+      box.appendChild(ol);
+      box.appendChild(el('p', 'cp-disc', DISC));
+
+      function show(cc) {
+        ol.innerHTML = '';
+        ol.appendChild(el('li', 'cp-msg', '불러오는 중입니다…'));
+        load(cc).then(function (d) {
+          renderItems(ol, d, limit);
+          var dt = new Date(d.t);
+          time.textContent = pad(dt.getHours()) + ':' + pad(dt.getMinutes()) + ' 기준';
+        }, function () {
+          ol.innerHTML = '';
+          ol.appendChild(el('li', 'cp-msg', '상품 정보를 불러오지 못했습니다. 잠시 후 다시 확인해 주세요.'));
+        });
+      }
+      show(cat);
+    }
+
+    var boxes = document.querySelectorAll('[data-cp]');
+    for (var i = 0; i < boxes.length; i++) initBox(boxes[i]);
+
+    /* ===== 애드센스 수동 슬롯 (ID 입력한 곳만) ===== */
+    var slots = document.querySelectorAll('.ad-slot[data-ad]');
+    for (var s = 0; s < slots.length; s++) {
+      var id = CFG.adSlots[slots[s].getAttribute('data-ad')];
+      if (!id) { slots[s].parentNode.removeChild(slots[s]); continue; }
+      var ins = document.createElement('ins');
+      ins.className = 'adsbygoogle';
+      ins.setAttribute('data-ad-client', CFG.adClient);
+      ins.setAttribute('data-ad-slot', id);
+      ins.setAttribute('data-ad-format', 'auto');
+      ins.setAttribute('data-full-width-responsive', 'true');
+      slots[s].appendChild(ins);
+      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+    }
+  })();
+  //]]>
+  </script>
+</body>
+</html>
