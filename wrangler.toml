@@ -9,4 +9,4 @@ id = "9b8370d20a9646b9aa73f63c9200379f"
 
 [vars]
 # 블로그 주소(쉼표로 여러 개 가능). 비워 두면 모든 곳에서 호출 가능
-ALLOWED_ORIGINS = "https://여기에블로그주소.blogspot.com"
+ALLOWED_ORIGINS = "http://coupas.lsy38.com/"
