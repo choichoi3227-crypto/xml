@@ -380,7 +380,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   (function () {
     /* ===== 설정: 여기만 수정하세요 ===== */
     var CFG = {
-      api: 'https://xml.choichoi3227.workers.dev/', // Worker 주소 (끝에 / 없이)
+      api: 'https://xml.jiji15899.workers.dev/', // Worker 주소 (끝에 / 없이)
       ttl: 60 * 60 * 1000,        // 캐시 1시간
       defaultCat: '1014',
       adSlots: { top: '', mid: '', side: '' }, // 애드센스 광고 단위 ID(숫자). 비워 두면 해당 위치는 표시 안 함
