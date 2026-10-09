@@ -54,13 +54,15 @@ export default {
       await env.CACHE.put(key, JSON.stringify(fresh), { expirationTtl: 60 * 60 * 24 });
       return json(slice(fresh, limit), 200, cors);
     } catch (e) {
+      console.error('fetchBest failed:', e && e.message);
       if (cached) return json(slice(cached, limit, true), 200, cors);
-      return json({ error: 'upstream_failed' }, 502, cors);
+      return json({ error: 'upstream_failed', reason: String((e && e.message) || e) }, 502, cors);
     }
   },
 };
 
 async function fetchBest(cat, env) {
+  if (!env.COUPANG_ACCESS_KEY || !env.COUPANG_SECRET_KEY) throw new Error('missing_secret');
   const path = `${BASE}/products/bestcategories/${cat}`;
   const query = 'limit=50';
   const auth = await authorization('GET', path, query, env);
@@ -120,12 +122,23 @@ function coupangDate() {
   );
 }
 
+// Origin 비교용 정규화: "http://a.com/" , "HTTP://A.com" → "http://a.com"
+function normOrigin(v) {
+  try { return new URL(v.trim()).origin.toLowerCase(); }
+  catch { return v.trim().replace(/\/+$/, '').toLowerCase(); }
+}
+
 function corsHeaders(req, env) {
   const origin = req.headers.get('Origin') || '';
-  const allowed = (env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean);
-  const h = { Vary: 'Origin', 'Access-Control-Allow-Methods': 'GET, OPTIONS' };
+  const allowed = (env.ALLOWED_ORIGINS || '').split(',').map((s) => s.trim()).filter(Boolean).map(normOrigin);
+  const h = {
+    Vary: 'Origin',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+  };
   if (!allowed.length) h['Access-Control-Allow-Origin'] = '*';
-  else if (allowed.includes(origin)) h['Access-Control-Allow-Origin'] = origin;
+  else if (origin && allowed.includes(normOrigin(origin))) h['Access-Control-Allow-Origin'] = origin;
   return h;
 }
 
